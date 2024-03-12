@@ -43,13 +43,11 @@ int Clock = 0; // Global Clock
 // driver functions
 int ISSUE(std::vector<ReservationStation>& reservationStations,
           std::vector<RegisterStatus>& regStatus,
-          std::vector<int> Registers,
           std::vector<Instruction>& Inst
 );
 
 void EXECUTE(std::vector<ReservationStation>& reservationStations,
           std::vector<RegisterStatus>& regStatus,
-          std::vector<int> Registers,
           std::vector<Instruction>& Inst);
 
 void WRITEBACK(std::vector<ReservationStation>& reservationStations,
