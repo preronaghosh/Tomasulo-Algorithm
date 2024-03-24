@@ -101,14 +101,14 @@ int ISSUE(std::vector<ReservationStation>& reservationStations,
 
     // set source operand value if available
     // or set it to the res station currently working with it
-    if (regStatus[Inst[currentInst_ISSUE-1].rs].Qi == RegStatusEmpty) {
+    if (regStatus[Inst[currentInst_ISSUE-1].rs].Qi == RegStatusEmpty) { 
         reservationStations[curr_rs].Vj = Inst[currentInst_ISSUE-1].rs;
         reservationStations[curr_rs].Qj = OperandAvailable;
     } else {
         reservationStations[curr_rs].Qj = regStatus[Inst[currentInst_ISSUE-1].rs].Qi;
     }
 
-    if (regStatus[Inst[currentInst_ISSUE-1].rt].Qi == RegStatusEmpty) {
+    if (regStatus[Inst[currentInst_ISSUE-1].rt].Qi == RegStatusEmpty) { 
         reservationStations[curr_rs].Vk = Inst[currentInst_ISSUE-1].rt;
         reservationStations[curr_rs].Qk = OperandAvailable;
     } else {
@@ -123,7 +123,7 @@ int ISSUE(std::vector<ReservationStation>& reservationStations,
     Inst[currentInst_ISSUE-1].issueClk = Clock;
 
     // update the destination register status
-    regStatus[Inst[currentInst_ISSUE-1].rd].Qi = curr_rs;
+    regStatus[Inst[currentInst_ISSUE-1].rd].Qi = curr_rs;  // register renaming to avoid WAR, WAW hazards
 
     return 2;
 
