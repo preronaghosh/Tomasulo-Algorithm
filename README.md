@@ -37,3 +37,5 @@ into the registers and into any reservation stations (including store buffers) w
 for this result. Stores are buffered in the store buffer until both the value to be
 stored and the store address are available; then the result is written as soon as the
 memory unit is free.
+
+###PS: This implementation does not support Reorder Buffers, commit and retire stages.
