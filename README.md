@@ -1,4 +1,4 @@
-# Tomasulo-Algorithm
+# Tomasulo Algorithm
 
 
 ## Issue Stage:
